@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cheat Sheet Generator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Cheat Sheet Generator</h1>
+        <p>Select the topics for which you want to generate cheat sheets and click 'Generate Cheat Sheet'.</p>
+    </header>
+    <form method="POST">
+        {% for topic in topics %}
+            <label>
+                <input type="checkbox" name="topics" value="{{ topic }}"> {{ topic }}
+            </label><br>
+        {% endfor %}
+        <button type="submit">Generate Cheat Sheet</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    {% if pdfs %}
+        <h2>Cheat Sheets:</h2>
+        <div class="cheat-sheet-list">
+            {% for pdf in pdfs %}
+                <div class="cheat-sheet">
+                    <p>{{ pdf[0] }}</p>
+                    <a href="{{ url_for('download_cheat_sheet', topic=pdf[0]) }}" download="{{ pdf[0] }}_cheat_sheet.pdf">Download PDF</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <footer>
+        <p>Created with ♥ for learners</p>
+    </footer>
+</body>
+</html>
