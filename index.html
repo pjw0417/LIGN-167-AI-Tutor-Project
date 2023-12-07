@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LIGN 167 AI Tutor Project</title>
+    <style>
+        h1, h2 {
+            text-align: center;
+        }
+        div {
+            &.item {
+                height: 6rem;
+                width: 50%;
+                text-align: center;
+                font-size: x-large;
+                font-weight: bold;
+                background-color: gainsboro;
+                display: grid;
+                place-items: center;
+                margin: 0.3rem;
+                border-radius: 0.7rem;
+                &:hover {
+                    background-color: lightgray;
+                    cursor: pointer;
+                }
+                & a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+            &.center-container {
+                display: grid;
+                place-items: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to our AI tutor demo!</h1>
+    </header>
+    <main>
+        <h2>Choose a feature to get started:</h2>
+        <nav>
+            <div class="center-container">
+                <div class="item">
+                    <a>Flashcards</a>
+                </div>
+                <div class="item">
+                    <a href="templates/index.html">Cheatsheets</a>
+                </div>
+                <div class="item">
+                    <a href="practiceexams.html">Practice Exams</a>
+                </div>
+            </div>
+        </nav>
+    </main>
+</body>
+</html>

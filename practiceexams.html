@@ -6,17 +6,123 @@
     <style>
         pre {
             font: medium serif;
-            max-width: 100%;
+            max-width: 85%;
             white-space: pre-wrap;
             overflow-wrap: break-word;
+            margin: auto;
+        }
+        aside {
+            font-size: small;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 1rem;
+        }
+        button {
+            background-color: gainsboro;
+            border: 0;
+            border-radius: 0.3rem;
+            font-size: 1rem;
+            font-weight: bold;
+            height: 2.5rem;
+            padding: 0 1rem;
+            text-align: center;
+            &:hover {
+                background-color: lightgray;
+                cursor: pointer;
+            }
+            &#download-button {
+                display: none;
+                margin-top: 2rem;
+            }
+        }
+        input[type="range"]:hover {
+            cursor: pointer;
+        }
+        #exam-title {
+            text-align: center;
+            display: none;
+        }
+        .center-container {
+            display: grid;
+            place-items: center;
+            width: 100%;
+            height: 4rem;
+        }
+        #home {
+            background-color: gainsboro;
+            border-radius: 0.3rem;
+            font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            height: 2.5rem;
+            width: 4rem;
+            padding: 0 1rem;
+            text-align: center;
+            display: grid;
+            place-items: center;
+            &:hover {
+                background-color: lightgray;
+                cursor: pointer;
+            }
+            & a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+        #regression {
+            margin-top: 0.8rem;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Practice Exam Generator</h1>
+    </header>
     <main>
-        <button id="exam-button">Generate practice exam</button>
+        <a href="index.html">
+            <button>Home</button>
+        </a>
+        <p>Follow the steps below to generate a practice exam!</p>
+        <p>
+            <label for="num-questions">How many questions would you like (max 50)?</label>
+            <input type="number" id="num-questions" name="num-questions" min="1" max="50" value="20">
+            <aside>
+                <i>Entering fewer than 20 questions may cause the distribution of questions to be greatly different from what is requested.
+                Requesting more than 30 questions will take the program a while to generate.</i>
+            </aside>
+        </p>
+        <label for="topics">Indicate how much emphasis you want on each major topic:</label>
+        <form id="topics" name="topics">
+            <input type="range" id="regression" name="regression" min="0" max="50">
+            <label for="regression">Linear/logistic regression</label>
+            <br>
+            <input type="range" id="gradient-descent" name="gradient-descent" min="0" max="50">
+            <label for="gradient-descent">Gradient descent</label>
+            <br>
+            <input type="range" id="mlp" name="mlp" min="0" max="50">
+            <label for="mlp">MLP (multilayer perceptrons)</label>
+            <br>
+            <input type="range" id="backpropagation" name="backpropagation" min="0" max="50">
+            <label for="backpropagation">Backpropagation</label>
+            <br>
+            <input type="range" id="autoregression" name="autoregression" min="0" max="50">
+            <label for="autoregression">Autoregressive models</label>
+            <br>
+            <input type="range" id="transformers" name="transformers" min="0" max="50">
+            <label for="transformers">Transformers</label>
+            <br>
+        </form>
+        <button id="exam-button">Generate</button>
         <p id="exam-status"></p>
+        <hr>
+        <p id="exam-title">LIGN 167 Practice Exam</p>
         <pre id="exam-result"></pre>
+        <div class="center-container">
+            <button id="download-button">Save as PDF</button>
+        </div>
     </main>
     <script src="generator.js"></script>
 </body>
