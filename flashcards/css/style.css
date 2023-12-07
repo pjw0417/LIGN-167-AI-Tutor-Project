@@ -1,0 +1,65 @@
+.title {
+    background-color: #ffffff; 
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+button {
+    background-color: gainsboro;
+    border: 0;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    &:hover {
+        background-color: lightgray;
+        cursor: pointer;
+    }
+    &#download-button {
+        display: none;
+        margin-top: 2rem;
+    }
+}
+
+.question {
+    border: solid 5px black;
+    text-align: center;
+    width: 45%;
+    margin: auto;
+    margin-top: 100px;
+}
+.answer {
+    border: solid 5px black;
+    text-align: center;
+    width: 45%;
+    margin: auto;
+    margin-top: 100px;
+    display: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+label {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.button2 {
+    text-align: center;
+    margin-top: 100px;
+    
+}
+button2 {
+    color: black;
+    padding: 20px;
+    background-color: seagreen;
+    border-radius: 0.3rem;
+    &:hover {
+        background-color: lightgreen;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}

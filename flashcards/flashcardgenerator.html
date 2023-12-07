@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flashcard Generator</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1 class= "title"> Flashcard Generator</h1>
+        <div>
+            <a href="../index.html">
+                <button>Home</button>
+            </a>
+        </div>
+        <h2> 
+            Enter the number of flashcards you want for your study session:
+        </h2>
+        <input type="number" id="number_of_flashcards" name="number_of_flashcards" min="1" max="50" value="20">
+
+        <h2> 
+            Select which topics you'd like to study
+        </h2>
+     
+        <input type="checkbox" id="checkbox1" name="option1">
+        <label for="checkbox1">Linear/Logistic Regression</label><br>
+        <input type="checkbox" id="checkbox2" name="option2">
+        <label for="checkbox2">Gradient Descent</label><br>
+        <input type="checkbox" id="checkbox3" name="option3">
+        <label for="checkbox3">Multilayer Perceptrons</label><br>
+        <input type="checkbox" id="checkbox4" name="option4">
+        <label for="checkbox4">Backpropagation</label><br>
+        <input type="checkbox" id="checkbox5" name="option5">
+        <label for="checkbox5">Autoregressive Models</label><br>
+        <input type="checkbox" id="checkbox6" name="option6">
+        <label for="checkbox6">Transformers</label><br>
+
+        <br>
+        <button id="generate">Generate</button>
+        <h3 id="loading">Loading...Please Wait</h3>
+        <div class="question">
+            <h3> Question </h3>
+        </div>
+        <div class="answer">
+            <h3> Answer </h3>
+        </div>
+
+        <div class="button2">
+            <button2 class="check">Check Answer</button2>
+            <button2 class="next">Next Card</button2>
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <script src= "js/app.js"></script>
+    </body> 
+</html>
