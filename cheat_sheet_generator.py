@@ -92,4 +92,6 @@ def download_cheat_sheet(topic):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.config['ENV'] = 'development'
+    app.config['DEBUG'] = True
+    app.run()
