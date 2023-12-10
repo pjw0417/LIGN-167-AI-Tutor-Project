@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cheat Sheet Generator</title>
+</head>
+<body>
+    <h1>Cheat Sheet Generator</h1>
+    
+    <div>
+        <label for="num-pages">Number of Pages:</label>
+        <input type="number" id="num-pages" name="numPages" min = "1">
+    </div>
+
+    <div>
+        <input type="checkbox" id="supervised-learning" name="topic">
+        <label for="supervised-learning">Supervised Learning</label>
+    </div>
+        <input type="checkbox" id="linear-regression" name="topic">
+        <label for="linear-regression">Linear Regression</label>
+    </div>
+        <input type="checkbox" id="logistic-regression" name="topic">
+        <label for="logistic-regression">Logistic Regression</label>
+    <div>
+        <input type="checkbox" id="gradient-descent" name="topic">
+        <label for="gradient-descent">Gradient Descent</label>
+    <div>
+        <input type="checkbox" id="optimization-through-gradient-descent" name="topic">
+        <label for="optimization-through-gradient-descent">Optimization through Gradient Descent</label>
+    <div>
+        <input type="checkbox" id="deep-learning-using-Pytorch" name="topic">
+        <label for="deep-learning-using-Pytorch">Deep Learning using Pytorch</label> 
+    <div>
+        <input type="checkbox" id="mlp" name="topic">
+        <label for="mlp">MLP</label>      
+    <div>
+        <input type="checkbox" id="backpropagation" name="topic">
+        <label for="backpropagation">Backpropagation</label>   
+    <div>
+        <input type="checkbox" id="autoregressive-models" name="topic">
+        <label for="autoregressive-models">Autoregressive Models</label> 
+    <div>
+        <input type="checkbox" id="autoregressive-langueage-modeling" name="topic">
+        <label for="autoregressive-langueage-modeling">Autoregressive Langueage Modeling</label> 
+    <div>
+        <input type="checkbox" id="transformers" name="topic">
+        <label for="transformers">Transformers</label>
+    <div>
+        <input type="checkbox" id="attention-in-transformers" name="topic">
+        <label for="attention-in-transformers">Attention in Transformers</label>
+    <div>
+        <input type="checkbox" id="masked-language-modeling" name="topic">
+        <label for="masked-language-modeling">Masked Language Modeling</label>   
+    <div>
+        <input type="checkbox" id="the-future-of-language-modeling" name="topic">
+        <label for="the-future-of-language-modeling">The Future of Language Modeling</label>           
+    
+    </div>
+
+    <button id="generate-cheatsheet">Generate Cheat Sheet</button>
+    <button id="download-button">Download PDF</button>
+
+    <div id="cheatsheet-status"></div>
+    <div id="cheatsheet-result"></div>
+    <div id="cheatsheet-title" ></div>
+
+    <script src="cheat_sheet_generator.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
