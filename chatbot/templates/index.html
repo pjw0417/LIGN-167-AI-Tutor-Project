@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LIGN 167 ChatBot</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1 class= "title"> Chat with Me</h1>
+        <div>
+            <a href="../../index.html">
+                <button>Home</button>
+            </a>
+        </div>
+        <br><br><br>
+        <form method="post" action="/">
+            <input type="text" id="message" name="message" placeholder="Type your message...">
+            <button type="submit">Send</button>
+        </form>
+        {% if response %}
+            <p><strong>Bot:</strong> {{ response }}</p>
+        {% endif %}
+    </body> 
+</html>
