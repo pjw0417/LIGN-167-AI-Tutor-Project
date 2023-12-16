@@ -24,6 +24,7 @@ const pdfRegex = /\([A-Z/]\)/g;
 const feedbackForm = document.getElementById('feedback-form');
 const feedbackInput = document.getElementById('feedback-input');
 
+
 function convertLatexToPlainText(latexContent) {
   let plainText = latexContent
       // Remove bold and italics symbols
@@ -93,8 +94,8 @@ async function generateCheatsheet(feedback = "") {
                "topic of neural networks and deep learning, specifically relating to natural language" +
                "processing."
               },
-              {role: "user", content: `Assuming you are writing on a A4 size double space with 12 fonts size 'Times New Roman' font, create a ${numPages}-pages (set 1,000 words per each page.) cheatsheet for UCSD LIGN167: Deep Learning for Natural Language Understanding, 
-              covering these topics: ${topicsString}. Remember each page has to be at least 1,000 words.
+              {role: "user", content: `Assuming you are writing with 12 fonts size 'Times New Roman' font, create a ${numPages}-pages cheatsheet for UCSD LIGN167: Deep Learning for Natural Language Understanding, 
+              covering these topics: ${topicsString}. Remember each page has to be at least 800 words. Separate each page with line breaks.
               The content should include clear and concise definitions and formulas, essential for exam preparation. 
               Each formula and concept should be accompanied by step-by-step explanations to facilitate understanding.
               
@@ -102,10 +103,21 @@ async function generateCheatsheet(feedback = "") {
               Use bullet points (•) for listing items. Ensure the layout is clean, organized, and easy on the eyes, with ample spacing and clear section headings. 
               Avoid using Latex formatting.
 
+              This is a sample format to follow:
+              PAGE 1 <br>
+
+              UCSD LIGN167: DEEP LEARNING FOR NATURAL LANGUAGE UNDERSTANDING<br>
+
+              ${topicsString}<br>
+              
+              KEY CONCEPTS<br>
+              • ...<br>
+
               Include example problems with solutions to illustrate the practical application of the theories and formulas. 
               Each topic should conclude with a summary section, recapping the most important points for quick revision.
               
-              Focus on making the cheatsheet informative, student-friendly, and especially useful for exam preparation, with all information presented in a readable and visually appealing manner. 
+              Focus on making the cheatsheet informative, student-friendly, and especially useful for exam preparation, with all information presented in a readable and visually appealing manner.
+              Do not include any difficulties or errors generating lengthy cheatsheet as an AI model in your response. 
               Always end with a motivational message to do well on a exam!`}
             ]
         })
@@ -115,13 +127,14 @@ async function generateCheatsheet(feedback = "") {
         cheatSheetStatus.innerHTML = "Generating Cheatsheet, please wait...";
         const response = await fetch("https://api.openai.com/v1/chat/completions", options);
         const data = await response.json();
+        console.log(data); 
 
         const latexContent = data["choices"][0]["message"]["content"];
         // Convert LaTeX content to plain text
         const plainTextContent = convertLatexToPlainText(latexContent);
 
         cheatSheetStatus.innerHTML = "Review and Provide Feedback!";
-        cheatSheetResult.innerHTML = plainTextContent
+        cheatSheetResult.innerHTML = plainTextContent;
         document.getElementById('feedback-status').innerHTML = "Incorporated feedback! Feel free to suggest better feedback!";
         downloadButton.style.display = "block";
         cheatsheetTitle.style.display = "block";
