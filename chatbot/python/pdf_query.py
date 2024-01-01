@@ -17,7 +17,7 @@ import os
 
 #read data from the file and put them into a variable called raw_text
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "Your Own API Keys"
 chain = load_qa_chain(OpenAI(), chain_type="stuff")
 pdf_files = ['../../LIGN 167 Resources/Textbook.pdf', 
             "../../LIGN 167 Resources/Course Syllabus.pdf", 
