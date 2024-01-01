@@ -9,7 +9,7 @@ const loading = document.getElementById("loading");
 loading.style.display = 'none';
 
 
-const apikey = "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"
+const apikey = "Your Own API Keys"
 
 
 
