@@ -1,4 +1,4 @@
-const apikey = "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";
+const apikey = "Your Own API Keys";
 const examButton = document.getElementById("exam-button");
 const examStatus = document.getElementById("exam-status");
 const examResult = document.getElementById("exam-result");
